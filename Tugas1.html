@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV dan Biodata</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url('WIN6.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 20px;
+      color: #333; /* Tetapkan warna teks */
+      transition: background-color 0.5s ease; /* Efek transisi untuk perubahan mode gelap/terang */
+      font-size: 18px; /*Memperbesar Ukuran Font*/
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.801);
+      border-radius: 10px;
+      padding: 20px;
+      border: 8px solid #000000; /* Ubah lebar border dan warna */
+      position: relative; /* Tambahkan posisi relatif */
+      transition: background-color 0.5s ease; /* Efek transisi untuk perubahan mode gelap/terang */
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #1a00af;
+    }
+
+    .btn-toggle-mode {
+      margin-bottom: 10px;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-image: url('WIN6.jpg');
+      background-color: #343a40;
+      color: #fff;
+    }
+
+    .dark-mode .container {
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 5px solid #666; /* Ubah lebar border dan warna */
+    }
+
+    .dark-mode .btn-toggle-mode {
+      background-color: #fff;
+      color: #000;
+    }
+    /* Menambahkan kelas text-justify */
+    .text-justify {
+      text-align: justify;
+    }
+
+    /* Mengatur agar posisi data dan elemen tepat seimbang kanan dan kiri */
+    .data-section {
+      margin-top: 20px;
+      border-bottom: 1px solid #ccc; /* Menambahkan garis bawah */
+      padding-bottom: 20px; /* Menambahkan padding bawah */
+    }
+
+    .data-section:last-child {
+      border-bottom: none; /* Hapus garis bawah di elemen terakhir */
+      padding-bottom: 0; /* Hapus padding bawah di elemen terakhir */
+    }
+
+    .data-section h2 {
+      margin-bottom: 10px;
+    }
+
+    .data-section p {
+      margin-bottom: 5px;
+    }
+
+    /* Tambahkan dekorasi border */
+    .decoration-border {
+      border-image-source: url(''); /* Gambar yang digunakan sebagai dekorasi border */
+      border-image-slice: 1 fill; /* Potong border menjadi 30 bagian, dan isi dengan gambar */
+      border-image-width: 20px; /* Lebar border */
+      border-image-repeat: round; /* Ulang gambar border */
+    }
+    /* Gaya tambahan untuk judul */
+    h1, h2 {
+      color: #010181; /* Warna biru dongker */
+      font-family: 'Comic Sans Ms'; /* Font Garamond */
+      font-size: 26px; /*Memperbesar Ukuran Font*/
+      font-weight: bold; /*Membuat Judul Menjadi Tebal*/
+    }
+
+    /* Gaya tambahan untuk isi kalimat */
+    li {
+      color: #8B4513; /* Warna coklat emas */
+      font-family: 'Comic Sans Ms'; /* Font Garamond */
+      font-size: 20px; /*Memperbesar Ukuran Font*/
+    }
+     /* Bingkai untuk foto-foto */
+     .photo-frame {
+      border: 5px solid #333;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+    }
+
+  /* Animasi untuk berpindah halaman */
+    .page-transition {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .page-active {
+      transform: translateX(0%);
+    }
+
+    .page-next {
+      transform: translateX(100%);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container decoration-border"> <!-- Tambahkan kelas decoration-border -->
+  <!-- Button untuk toggle mode -->
+  <button id="toggleMode" class="btn btn-primary btn-toggle-mode">Toggle Mode</button>
+
+  <!-- Button untuk toggle halaman -->
+  <button id="togglePage" class="btn btn-secondary btn-toggle-mode">Toggle Page</button>
+
+  <div id="cv">
+    <h1>Curriculum Vitae (CV)</h1>
+    <div class="row">
+      <div class="col-md-2">
+        <img src="Win2.jpeg" alt="Profile Picture" class="profile-img">
+      </div>
+      <div class="col-md-10 text-justify">
+        <!-- Menambahkan kelas data-section -->
+        <div class="data-section">
+          <h2>Data Diri</h2>
+          <ul>
+          <li>Nama : Erwin Margatama</li>
+          <li>Umur : 19 tahun</li>
+          <li>Alamat: Jl. H. Suwandi, RT. 23, Blok B, Kel. Gn. Kelua, Kec. Samarinda Ulu, Kota Samarinda</p>
+          <li>Nomor HP : 085754542466</li>
+          <li>Email : erwinmargatama@gmail.com</li>
+        </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 text-justify">
+        <!-- Menambahkan kelas data-section -->
+        <div class="data-section">
+          <h2>Pendidikan</h2>
+          <ul>
+          <li>S1 Pendidikan Komputer - Universitas Mulawarman</li>
+          <li>SMK Negeri 6 Penajam Paser Utara</li>
+          <li>SMP Negeri 6 Penajam Paser Utara</li>
+          <li>SD Negeri 6 Sepaku</li>
+        </ul>
+        </div>
+      </div>
+      <div class="col-md-6 text-justify">
+        <!-- Menambahkan kelas data-section -->
+        <div class="data-section">
+          <h2>Kemampuan</h2>
+          <ul>
+            <li>HTML Alhamdulillah Mumet</li>
+            <li>CSS Semoga Bisa</li>
+            <li>Microsoft Office Insyaalah Bisa</li>
+            <li>Bootstrap Baru kenal sudah debut</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 text-justify">
+        <!-- Menambahkan kelas data-section -->
+        <div class="data-section">
+          <h2>Hobby</h2>
+          <ul>
+          <li>Bernyanyi</li>
+          <li>Bersepeda</li>
+          <li>Healing</li>
+          <li>Menonton Film</li>
+        </ul>
+        </div>
+      </div>
+      <div class="col-md-6 text-justify">
+        <!-- Menambahkan kelas data-section -->
+        <div class="data-section">
+          <h2>Pengalaman</h2>
+          <ul>
+          <li>Administrator Kantor Camat Sepaku- (2021 - 2022)</li>
+          <li>Ketua Kelas 14 Tahun - (2009 - 2023)</li>
+          <li>Koordinator Acara Perpisahan SMK - (2022)</li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="biodata" class="text-justify" style="display: none;">
+    <h1>Biodata</h1>
+    <div class="row">
+      <div class="col-md-2">
+        <img src="Win2.jpeg" alt="Profile Picture" class="profile-img">
+      </div>
+      <div class="col-md-10">
+        <h2>Data Diri</h2>
+        <ul>
+        <li>Nama : Erwin Margatama</li>
+        <li>Umur : 19 tahun</li>
+        <li>Alamat: Jl. H. Suwandi, RT. 23, Blok B, Kel. Gn. Kelua, Kec. Samarinda Ulu, Kota Samarinda</p>
+        <li>Nomor HP : 085754542466</li>
+        <li>Email : erwinmargatama@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Foto-foto</h2>
+    <div class="row">
+      <!-- Bingkai untuk foto-foto biodata -->
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg2.webp" alt="Photo 1">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg10.jpg" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg3.jpg" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="vano2.jpeg" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="vano1.jpeg" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg4.jpg" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg5.jpg" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg11.jpg" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg6.png" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg7.png" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg8.jpg" alt="Photo 2">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="photo-frame">
+          <img src="Marg9.jpg" alt="Photo 2">
+        </div>
+      </div></Var>
+      <!-- Tambahkan bingkai untuk foto-foto lainnya -->
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // Toggle mode
+    $('#toggleMode').click(function(){
+      $('body').toggleClass('dark-mode');
+    });
+
+    // Toggle halaman
+    $('#togglePage').click(function(){
+      $('#cv').toggle();
+      $('#biodata').toggle();
+    });
+  });
+</script>
+
+</body>
+</html>
